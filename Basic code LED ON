@@ -1,0 +1,12 @@
+int ledPin = 2; //GPIO2
+void setup() {
+  // Tetapkan pin LED sebagai OUTPUT
+  pinMode(ledPin, OUTPUT);
+
+}
+
+void loop() {
+  // LED ON
+  digitalWrite(ledPin,HIGH);
+
+}
