@@ -1,0 +1,28 @@
+#include <WiFi.h>
+
+const char* ssid = "xxxxx"; // tukarkan ikut ssid yang digunakan
+const char* password = "yyyyyy"; // tukarkan ikut paaword yang digunakan
+
+void setup() {
+  Serial.begin(115200);
+  Serial.print("Menyambung ke WiFi: ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+
+  int counter = 0;
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+    counter++;
+    if (counter > 20) { // 10 saat tunggu
+      Serial.println("\nGagal sambung ke WiFi.");
+      return;
+    }
+  }
+
+  Serial.println("\nWiFi berjaya disambung!");
+  Serial.print("Alamat IP: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {}
