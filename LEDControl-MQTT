@@ -3,10 +3,10 @@
 
 #define LED1 4
 
-#define Client_Id   "kakcikcomel"
+#define Client_Id   "id_anda"
 #define NamaBroker  "broker.emqx.io"
-#define namaSSID    "ASDA97";
-#define SSIDpwd     "lahfizihasah17";
+#define namaSSID    "nama_wifi";
+#define SSIDpwd     "pwd_wifi";
 
 const char ssid[] = namaSSID;
 const char pass[] = SSIDpwd;
@@ -18,13 +18,13 @@ void connect() {
     if(WiFi.status() == WL_CONNECTED) {
       if(client.connect(Client_Id)) {
         Serial.println("\nconnected!");
-          client.subscribe("kakcik/LED1");
+          client.subscribe("nama_topik/LED1");
       }
     }
 }
 
 void button(String &topic, String &payload) {
-     if(String(topic) == "kakcik/LED1") 
+     if(String(topic) == "nama_topik/LED1") 
   {
       if(payload =="1")
       {
