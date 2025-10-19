@@ -7,7 +7,7 @@
 // ========================
 // WiFi Settings
 // ========================
-const char* ssid = "xxxx";             // <-- Tukar kepada nama WiFi Asmah
+const char* ssid = "xxxx";             // <-- Tukar kepada nama WiFi anda
 const char* password = "yyyy";      // <-- Kata laluan WiFi
 
 // ========================
